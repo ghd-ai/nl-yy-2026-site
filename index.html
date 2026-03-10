@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>零点档案</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link id="mainCss" rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <noscript>
+      <div class="noscript">需要启用 JavaScript 才能运行这个网页。</div>
+    </noscript>
+
+    <div id="app" class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div id="brandTitle" class="brand-title">零点档案</div>
+          <div id="brandSubtitle" class="brand-subtitle">悬疑主题 · 生日特别篇</div>
+        </div>
+
+        <div class="topbar-right">
+          <div id="scorePill" class="score-pill" title="侦探声望">
+            <span class="score-pill__label">声望</span>
+            <span id="scoreValue" class="score-pill__value">100</span>
+          </div>
+          <div id="audioNow" class="audio-now" aria-live="polite">
+            <div class="audio-now__head">
+              <span class="audio-now__label">正在播放</span>
+              <span id="audioTime" class="audio-now__time">--:-- / --:--</span>
+            </div>
+            <div id="audioTrack" class="audio-now__track">点击“接受委托”后开启</div>
+            <div class="audio-now__bar" aria-hidden="true">
+              <span id="audioProgress" class="audio-now__fill"></span>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <button id="btnAudio" class="btn btn-ghost" type="button">音乐</button>
+            <button id="btnSettings" class="btn btn-ghost" type="button">设置</button>
+            <button id="btnReset" class="btn btn-ghost" type="button">重置</button>
+          </div>
+        </div>
+      </header>
+
+      <main id="view" class="view" role="main" aria-live="polite"></main>
+    </div>
+
+    <div
+      id="overlay"
+      class="overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    ></div>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <script>
+      (function () {
+        const v = Date.now().toString(36);
+        const css = document.getElementById("mainCss");
+        if (css) css.href = `styles.css?v=${v}`;
+
+        const load = (src) =>
+          new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = `${src}?v=${v}`;
+            s.onload = resolve;
+            s.onerror = reject;
+            document.body.appendChild(s);
+          });
+
+        load("config.js").then(() => load("app.js"));
+      })();
+    </script>
+  </body>
+</html>

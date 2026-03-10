@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe8f2" />
+      <stop offset="0.55" stop-color="#fff4e8" />
+      <stop offset="1" stop-color="#e8f7ff" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff79c6" stop-opacity="0.85" />
+      <stop offset="0.55" stop-color="#ffb86c" stop-opacity="0.85" />
+      <stop offset="1" stop-color="#8be9fd" stop-opacity="0.85" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="b" />
+      <feColorMatrix
+        in="b"
+        type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.18 0"
+        result="c"
+      />
+      <feMerge>
+        <feMergeNode in="c" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)" />
+
+  <!-- soft bokeh -->
+  <g opacity="0.28" filter="url(#softGlow)">
+    <circle cx="210" cy="180" r="86" fill="#ff79c6" />
+    <circle cx="980" cy="210" r="92" fill="#8be9fd" />
+    <circle cx="930" cy="640" r="120" fill="#ffb86c" />
+    <circle cx="240" cy="610" r="110" fill="#8be9fd" />
+  </g>
+
+  <!-- card -->
+  <rect x="90" y="92" width="1020" height="616" rx="34" fill="rgba(255,255,255,0.55)" stroke="rgba(0,0,0,0.08)" stroke-width="2" />
+  <rect x="112" y="114" width="976" height="572" rx="30" fill="rgba(255,255,255,0.26)" stroke="rgba(0,0,0,0.06)" stroke-width="1" />
+
+  <!-- top accent line -->
+  <rect x="142" y="150" width="916" height="8" rx="4" fill="url(#accent)" opacity="0.42" />
+
+  <text
+    x="142"
+    y="142"
+    fill="rgba(15,23,42,0.62)"
+    font-size="22"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+  >
+    FRAME 22
+  </text>
+
+  <!-- main text -->
+  <text
+    x="600"
+    y="372"
+    text-anchor="middle"
+    fill="rgba(15,23,42,0.88)"
+    font-size="96"
+    font-weight="800"
+    font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif"
+  >
+    月月
+  </text>
+  <text
+    x="600"
+    y="452"
+    text-anchor="middle"
+    fill="rgba(51,65,85,0.86)"
+    font-size="42"
+    font-weight="700"
+    font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif"
+  >
+    22 岁生日快乐
+  </text>
+  <text
+    x="600"
+    y="518"
+    text-anchor="middle"
+    fill="rgba(51,65,85,0.78)"
+    font-size="28"
+    font-weight="600"
+    font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif"
+  >
+    愿你每一次热爱都有回响
+  </text>
+
+  <!-- pill -->
+  <rect x="410" y="566" width="380" height="60" rx="30" fill="url(#accent)" opacity="0.22" />
+  <text
+    x="600"
+    y="606"
+    text-anchor="middle"
+    fill="rgba(15,23,42,0.86)"
+    font-size="26"
+    font-weight="800"
+    letter-spacing="3"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+  >
+    HAPPY
+  </text>
+
+  <!-- tiny stars -->
+  <g opacity="0.65">
+    <path d="M1010 340l8 18 18 8-18 8-8 18-8-18-18-8 18-8z" fill="#8be9fd" />
+    <path d="M210 330l6 14 14 6-14 6-6 14-6-14-14-6 14-6z" fill="#ff79c6" />
+    <path d="M960 520l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#ffb86c" />
+    <path d="M270 540l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#ffb86c" />
+  </g>
+</svg>
+
